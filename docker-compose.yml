@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  shipment_module:
+    env_file:
+      - "../.env"
+    build:
+      context: .
+    container_name: shipment_module
+    restart: always
+    ports:
+      - "8089:8080"
+    environment:
+      MODULE_GROUP_ID: PAYMENT_GROUP_ID
+
