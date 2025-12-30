@@ -18,3 +18,7 @@ microservices:
 
 server:
   port: ${SERVICE_PORT}
+
+message:
+  ttl:
+    seconds: ${MESSAGE_TTL_SECONDS}

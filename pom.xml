@@ -6,12 +6,12 @@
     <parent>
         <groupId>io.github.technic47</groupId>
         <artifactId>shop-spring-boot-starter</artifactId>
-        <version>1.0.30</version>
+        <version>1.0.33</version>
     </parent>
 
     <groupId>ru.kuznetsov.shop</groupId>
     <artifactId>shipment</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>Shipment_module</name>
     <description>Shipment_module</description>
 
@@ -41,6 +41,11 @@
             <groupId>io.github.technic47</groupId>
             <artifactId>data-access</artifactId>
             <version>${data-access.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.technic47</groupId>
+            <artifactId>kafka-service</artifactId>
+            <version>${kafka-service.version}</version>
         </dependency>
 
         <dependency>
