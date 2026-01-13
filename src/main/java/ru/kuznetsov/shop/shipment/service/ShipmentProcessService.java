@@ -23,7 +23,7 @@ public class ShipmentProcessService {
     public OrderStatusDto processOrderShippedStatus(Long orderId) {
         OrderStatusDto orderStatusSaved = orderStatusService.create(new OrderStatusDto(
                 SHIPPED,
-                "Shipment service",
+                null,
                 "Order is shipped " + LocalDateTime.now(),
                 orderId
         ));
