@@ -1,24 +1,5 @@
 spring:
   application:
-    name: Shipment_module
-
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: ${DB_URL}
-    username: ${DB_USER}
-    password: ${DB_PASS}
-
-  kafka:
-    bootstrap-servers: ${KAFKA_URL}
-    consumer:
-      group-id: ${MODULE_GROUP_ID}
-
-microservices:
-  baseUrl: ${BASE_URL}
-
-server:
-  port: ${SERVICE_PORT}
-
-message:
-  ttl:
-    seconds: ${MESSAGE_TTL_SECONDS}
+    name: shipment
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL}
