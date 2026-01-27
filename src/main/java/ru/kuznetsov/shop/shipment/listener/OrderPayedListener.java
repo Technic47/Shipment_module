@@ -29,12 +29,15 @@ public class OrderPayedListener {
         try {
             UpdateOrderDTO dto = objectMapper.readValue(updateStatusDto, UpdateOrderDTO.class);
             Long orderId = dto.getOrderId();
+            logger.info("Order payed successfully with orderId={}. Preparing shipment", orderId);
 
             if (!messageCache.exists(orderId)) {
                 messageCache.put(orderId);
 
                 shipmentContract.shipOrder(orderId);
                 shipmentProcessService.processOrderShippedStatus(orderId);
+
+                logger.info("OrderId: {} successfully shipped", orderId);
             } else {
                 logger.info("Duplicate message for order id {}", orderId);
             }
